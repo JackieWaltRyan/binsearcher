@@ -41,12 +41,13 @@ def find_bin_files(keywords):
                               f"Возможно нет прав на создания папок.\n")
                         response = False
                 for key in data:
+                    words = sorted(data[key], key=str.lower)
                     print(f"3: Создание файла TXT/{key}.txt.\n")
                     try:
                         with open(file=f"TXT/{key}.txt",
                                   mode="w",
                                   encoding="UTF-8") as output_txt_file:
-                            for item in data[key]:
+                            for item in words:
                                 output_txt_file.write(f"{item}\n")
                     except Exception:
                         print(f"[WARNING] Во время создания файла TXT/{key}.txt возникла ошибка. "
