@@ -38,7 +38,7 @@ jobs:
           DATE_D = int(datetime.now().strftime("%d"))
           TIME = str(int(datetime.now().strftime("%H%M%S"))).rjust(6, "0")
           
-          version = f"v{DATE_Y}.{DATE_M}.{DATE_D} build {TIME}"
+          version = f"v{DATE_Y}.{DATE_M}.{DATE_D}.{TIME}"
           print(version)
 
           with open(getenv("GITHUB_OUTPUT"), "a") as github_output_file:
