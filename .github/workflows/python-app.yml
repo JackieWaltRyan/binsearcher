@@ -31,6 +31,7 @@ jobs:
         shell: python
         run: |
           from datetime import datetime
+          from os import getenv
           
           DATE_Y = int(datetime.now().strftime("%y"))
           DATE_M = int(datetime.now().strftime("%m"))
@@ -40,7 +41,7 @@ jobs:
           version = f"v{DATE_Y}.{DATE_M}.{DATE_D} build {TIME}"
           print(version)
 
-          with open(os.getenv("GITHUB_OUTPUT"), "a") as github_output_file:
+          with open(getenv("GITHUB_OUTPUT"), "a") as github_output_file:
               github_output_file.write(f"version={version}")
         
       - name: Build distribution
