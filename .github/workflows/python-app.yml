@@ -32,10 +32,10 @@ jobs:
         run: |
           from datetime import datetime
           
-          DATE_Y = datetime.now().strftime("%-y")
-          DATE_M = datetime.now().strftime("%-m")
-          DATE_D = datetime.now().strftime("%-d")
-          TIME = datetime.now().strftime("%-H%-M%-S")
+          DATE_Y = int(datetime.now().strftime("%y"))
+          DATE_M = int(datetime.now().strftime("%m"))
+          DATE_D = int(datetime.now().strftime("%d"))
+          TIME = str(int(datetime.now().strftime("%H%M%S"))).rjust(6, "0")
           
           version = f"v{DATE_Y}.{DATE_M}.{DATE_D} build {TIME}"
           print(version)
