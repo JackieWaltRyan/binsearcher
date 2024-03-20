@@ -31,9 +31,13 @@ jobs:
         shell: python
         run: |
           from datetime import datetime
-          DATE = datetime.now().strftime("%-y.%-m.%-d")
+          
+          DATE_Y = datetime.now().strftime("%-y")
+          DATE_M = datetime.now().strftime("%-m")
+          DATE_D = datetime.now().strftime("%-d")
           TIME = datetime.now().strftime("%-H%-M%-S")
-          version = f"v{DATE} build {TIME}"
+          
+          version = f"v{DATE_Y}.{DATE_M}.{DATE_D} build {TIME}"
           print(version)
         
       - name: Build distribution
