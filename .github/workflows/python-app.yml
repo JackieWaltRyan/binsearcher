@@ -31,13 +31,11 @@ jobs:
         shell: python
         run: |
           from datetime import datetime
-          
           DATE = datetime.now().strftime("%-y.%-m.%-d")
           TIME = datetime.now().strftime("%-H%-M%-S")
-          
           version = f"v{DATE} build {TIME}"
           print(version)
-
+        
       - name: Build distribution
         run: |
           pyinstaller --noconfirm --onefile BINsearcher.py
