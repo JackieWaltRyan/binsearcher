@@ -65,8 +65,8 @@ def find_bin_files(keywords, files, folder=""):
         
         return response
     except Exception:
-        print("[ERROR] Во время обработки файлов в папке bin возникла ошибка. "
-              "Возможно файлы в папке повреждены или нет прав на чтение файлов.\n")
+        print("[ERROR] Во время обработки файлов возникла ошибка. "
+              "Возможно файлы повреждены или нет прав на чтение файлов.\n")
         
         return False
 
