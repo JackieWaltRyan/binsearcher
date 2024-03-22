@@ -34,13 +34,13 @@ def find_bin_files(keywords, files, folder=""):
             
             i += 1
         
-        if not exists(path="TXT"):
-            print(f"2: Создание папки TXT.\n")
+        if not exists(path="BINsearcher"):
+            print(f"2: Создание папки BINsearcher.\n")
             
             try:
-                makedirs(name="TXT")
+                makedirs(name="BINsearcher")
             except Exception:
-                print(f"[ERROR] Во время создания папки TXT возникла ошибка. "
+                print(f"[ERROR] Во время создания папки BINsearcher возникла ошибка. "
                       f"Возможно нет прав на создания папок.\n")
                 
                 response = False
@@ -48,16 +48,16 @@ def find_bin_files(keywords, files, folder=""):
         for key in data:
             words = sorted(data[key], key=str.lower)
             
-            print(f"3: Создание файла TXT/{key}.txt.\n")
+            print(f"3: Создание файла BINsearcher/{key}.txt.\n")
             
             try:
-                with open(file=f"TXT/{key}.txt",
+                with open(file=f"BINsearcher/{key}.txt",
                           mode="w",
                           encoding="UTF-8") as output_txt_file:
                     for item in words:
                         output_txt_file.write(f"{item}\n")
             except Exception:
-                print(f"[WARNING] Во время создания файла TXT/{key}.txt возникла ошибка. "
+                print(f"[WARNING] Во время создания файла BINsearcher/{key}.txt возникла ошибка. "
                       f"Возможно нет прав на создания файлов."
                       f"Файл пропущен.\n")
                 
