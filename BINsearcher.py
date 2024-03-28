@@ -16,13 +16,13 @@ def find_bin_files(keywords, files, folder=""):
                           mode="rb") as input_bin_file:
                     for line in input_bin_file.readlines():
                         for keyword in keywords:
-                            if keyword not in data:
+                            if (keyword not in data):
                                 data.update({keyword: []})
                             for word in findall(pattern=rb"(%s_\w+)" % keyword.encode(encoding="UTF-8",
                                                                                       errors="ignore"),
                                                 string=line):
-                                if word.decode(encoding="UTF-8",
-                                               errors="ignore") not in data[keyword]:
+                                if (word.decode(encoding="UTF-8",
+                                                errors="ignore") not in data[keyword]):
                                     data[keyword].append(word.decode(encoding="UTF-8",
                                                                      errors="ignore"))
             except Exception:
@@ -30,7 +30,7 @@ def find_bin_files(keywords, files, folder=""):
                       f"Возможно данные в файле повреждены или нет прав на чтение файлов. "
                       f"Файл пропущен.\n")
                 
-                response = False if response else False
+                response = (False if response else False)
             
             i += 1
         
@@ -79,20 +79,20 @@ def load_file_settings():
             with open(file="BINsearcher.txt",
                       mode="r",
                       encoding="UTF-8") as input_file_txt:
-                keywords = [x.strip() for x in input_file_txt.readlines() if x.strip() != ""]
+                keywords = [x.strip() for x in input_file_txt.readlines() if x.strip()]
                 
-                if len(keywords) > 0:
-                    files = [x for x in argv[1:] if isfile(path=x) and x.endswith(".bin")]
+                if (len(keywords) > 0):
+                    files = [x for x in argv[1:] if (isfile(path=x) and x.endswith(".bin"))]
         
-                    if len(files) > 0:
+                    if (len(files) > 0):
                         return find_bin_files(keywords=keywords,
                                               files=files,
                                               folder="")
                     else:
                         if exists(path="bin"):
-                            files = [x for x in listdir(path="bin") if isfile(path=f"bin/{x}") and f"bin/{x}".endswith(".bin")]
+                            files = [x for x in listdir(path="bin") if (isfile(path=f"bin/{x}") and f"bin/{x}".endswith(".bin"))]
                             
-                            if len(files) > 0:
+                            if (len(files) > 0):
                                 return find_bin_files(keywords=keywords,
                                                       files=files,
                                                       folder="bin/")
