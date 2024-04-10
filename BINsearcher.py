@@ -46,7 +46,8 @@ def find_bin_files(keywords, files, folder=""):
                 response = False
 
         for key in data:
-            words = sorted(data[key], key=lambda x: x.lower())
+            words = sorted(data[key],
+                           key=lambda x: x.lower())
 
             print(f"3: Создание файла BINsearcher/{key}.txt.\n")
 
