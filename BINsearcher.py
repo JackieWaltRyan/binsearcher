@@ -3,6 +3,8 @@ from os.path import exists, isfile
 from re import findall
 from sys import exit, argv
 
+from natsort import natsorted, ns
+
 
 def find_bin_files(keywords, files, folder=""):
     try:
@@ -46,8 +48,8 @@ def find_bin_files(keywords, files, folder=""):
                 response = False
 
         for key in data:
-            words = sorted(data[key],
-                           key=lambda x: x.lower())
+            words = natsorted(seq=data[key],
+                              alg=ns.IGNORECASE)
 
             print(f"3: Создание файла BINsearcher/{key}.txt.\n")
 
@@ -153,5 +155,7 @@ if __name__ == "__main__":
         else:
             raise Exception
     except Exception:
+        print("[INFO] Работа программы завершена, но во время работы возникли ошибки!\n")
+
         input()
         exit()
