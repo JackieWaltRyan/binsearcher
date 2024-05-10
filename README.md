@@ -1,5 +1,8 @@
 # binsearcher
 
+[![GitHub stable release version](https://img.shields.io/github/v/release/JackieWaltRyan/binsearcher.svg?label=Version&logo=github&cacheSeconds=600&style=flat-square)](https://github.com/JackieWaltRyan/binsearcher/releases/latest)
+[![Github stable release downloads](https://img.shields.io/github/downloads/JackieWaltRyan/binsearcher/latest/total.svg?label=Downloads&logo=github&cacheSeconds=600&style=flat-square)![Total downloads](https://img.shields.io/github/downloads/JackieWaltRyan/binsearcher/total.svg?label=%2F&cacheSeconds=600&style=flat-square)](https://github.com/JackieWaltRyan/binsearcher/releases/latest)
+
 My program for quickly finding different IDs in game dump files for the My Little Pony mobile game by Gameloft.
 
 4PDA: https://4pda.to/forum/index.php?showtopic=396777&view=findpost&p=121890029
